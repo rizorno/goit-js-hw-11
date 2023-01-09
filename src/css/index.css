@@ -1,7 +1,12 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
 ul {
@@ -56,17 +61,23 @@ p {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   padding: 20px 10px;
   background: #34e89e;
-  background: -webkit-gradient(linear, left top, right top, from(#0f3443), to(#34e89e));
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(#0f3443),
+    to(#34e89e)
+  );
   background: linear-gradient(to right, #0f3443, #34e89e);
   -webkit-box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.5);
-          box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.5);
 }
 
 .search-form__input {
@@ -118,15 +129,18 @@ p {
   border-top-right-radius: 5px;
   border-bottom-right-radius: 5px;
   cursor: pointer;
-  -webkit-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
 @media screen and (min-width: 768px) {
   .search-form__button {
     width: 100px;
   }
 }
-.search-form__button:hover, .search-form__button:focus {
+.search-form__button:hover,
+.search-form__button:focus {
   background-color: #0f3443;
   color: #ffffff;
 }
@@ -150,7 +164,7 @@ p {
 
 .photo-card {
   -webkit-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.5);
-          box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.5);
+  box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
   overflow: hidden;
   display: grid;
@@ -160,7 +174,7 @@ p {
 
 img {
   -o-object-fit: contain;
-     object-fit: contain;
+  object-fit: contain;
 }
 
 .info {
@@ -169,11 +183,11 @@ img {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-align: center;
+  align-items: center;
   font-size: 15px;
   padding: 7px;
   margin-top: auto;
@@ -185,8 +199,8 @@ img {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   text-align: center;
 }
 
@@ -202,10 +216,13 @@ img {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  -webkit-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1), color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  -webkit-transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1),
+    color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
-.load-more:hover, .load-more:focus {
+.load-more:hover,
+.load-more:focus {
   background-color: #0f3443;
   color: #ffffff;
 }
@@ -221,4 +238,4 @@ img {
 }
 .end-collection-text.is-hidden {
   display: none;
-}/*# sourceMappingURL=index.css.map */
+} /*# sourceMappingURL=index.css.map */
