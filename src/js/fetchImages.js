@@ -16,7 +16,17 @@ export default async function fetchImages(value, page) {
   //? per_page (default = 20) : кількість результатів на сторінці (приймаємо: '40').
 
   const key = '32692148-893493904108f813cf446c93e';
-  const filter = `?key=${key}&q=${value}&image_type=photo&orientation=horizontal&safesearch=true&per_page=40&page=${page}`;
+  const params = new URLSearchParams({
+    key,
+    q: value,
+    image_type: 'photo',
+    orientation: 'horizontal',
+    safesearch: true,
+    per_page: 40,
+    page,
+  });
+  // Alternative
+  // const params = `key=${key}&q=${value}&image_type=photo&orientation=horizontal&safesearch=true&per_page=40&page=${page}`;
 
-  return await axios.get(`${url}${filter}`).then(response => response.data);
+  return await axios.get(`${url}?${params}`).then(response => response.data);
 }
