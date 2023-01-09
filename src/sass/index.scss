@@ -1,0 +1,235 @@
+// Brakepoints
+
+$mobile: 320px;
+$tablet: 768px;
+$desktop: 1280px;
+
+// Transition
+
+$transition: 250ms cubic-bezier(0.4, 0, 0.2, 1);
+
+// Base
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+  background-image: url('./bg-pattern.png');
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+a {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  margin: 0;
+  padding: 0;
+}
+
+// Utilities
+
+.container {
+  width: $mobile;
+
+  margin: 100px auto 0;
+  padding: 10px;
+
+  @media screen and (min-width: $tablet) {
+    width: $tablet;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: $desktop;
+  }
+}
+
+// Search form
+
+.search-form {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding: 20px 10px;
+
+  background: #34e89e;
+  background: linear-gradient(to right, #0f3443, #34e89e);
+  box-shadow: 0px 3px 5px 0px rgba(0, 0, 0, 0.5);
+}
+
+.search-form__input {
+  width: 200px;
+  height: 40px;
+  padding: 10px;
+
+  font-size: 14px;
+
+  outline: none;
+  border: none;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+
+  &::placeholder {
+    font-size: 14px;
+    color: #cccccc;
+  }
+
+  @media screen and (min-width: $tablet) {
+    width: 400px;
+  }
+
+  @media screen and (min-width: $desktop) {
+    width: 600px;
+  }
+}
+
+.search-form__button {
+  width: 70px;
+  height: 40px;
+
+  font-size: 14px;
+
+  border: none;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+
+  cursor: pointer;
+
+  transition: background-color $transition, color $transition;
+
+  @media screen and (min-width: $tablet) {
+    width: 100px;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: #0f3443;
+    color: #ffffff;
+  }
+}
+
+// Gallery
+
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+  width: 100%;
+
+  @media screen and (min-width: $tablet) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media screen and (min-width: $desktop) {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.photo-card {
+  background-color: #ffffff;
+
+  width: 300px;
+  height: 275px;
+
+  box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  overflow: hidden;
+
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+
+  //   for the central position in the grid
+  //   place-self: center;
+  margin: 0 auto;
+}
+
+img {
+  object-fit: contain;
+}
+
+.info {
+  height: 50px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  font-size: 15px;
+
+  padding: 7px;
+  margin-top: auto;
+}
+
+.info-item {
+  display: flex;
+  flex-direction: column;
+
+  text-align: center;
+}
+
+.btn-more {
+  text-align: center;
+}
+
+.load-more {
+  width: 200px;
+  height: 40px;
+
+  font-size: 15px;
+
+  margin: 30px 0;
+
+  border: none;
+  border-radius: 5px;
+
+  cursor: pointer;
+
+  transition: background-color $transition, color $transition;
+
+  &:hover,
+  &:focus {
+    background-color: #0f3443;
+    color: #ffffff;
+  }
+
+  &.is-hidden {
+    display: none;
+  }
+}
+
+.end-collection-text {
+  font-weight: 500;
+  font-size: 16px;
+
+  text-align: center;
+
+  margin: 30px 0;
+
+  &.is-hidden {
+    display: none;
+  }
+}
