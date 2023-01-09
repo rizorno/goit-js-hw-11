@@ -165,6 +165,8 @@ p {
 
 .photo-card {
   background-color: #ffffff;
+  width: 300px;
+  height: 275px;
   -webkit-box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.5);
   box-shadow: 0px 3px 8px 0px rgba(0, 0, 0, 0.5);
   border-radius: 5px;
