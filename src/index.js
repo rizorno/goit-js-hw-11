@@ -1,4 +1,4 @@
-import './sass/index.scss';
+import './css/styles.css';
 
 import fetchImages from './js/fetchImages';
 import { Notify } from 'notiflix';
