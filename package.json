@@ -12,16 +12,20 @@
     "url": "git+https://github.com/rizorno/goit-js-hw-11.git"
   },
   "keywords": [],
-  "author": "Alexander Repeta <alexander.repeta@gmail.com>",
+  "author": "",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/rizorno/goit-js-hw-11.git"
   },
   "dependencies": {
-    "modern-normalize": "^1.1.0"
+    "axios": "^1.2.2",
+    "modern-normalize": "^1.1.0",
+    "notiflix": "^3.2.5",
+    "simplelightbox": "^2.11.0"
   },
   "devDependencies": {
     "@parcel/transformer-sass": "^2.6.0",
+    "buffer": "^5.7.1",
     "parcel": "^2.6.0",
     "parcel-reporter-clean-dist": "^1.0.4",
     "posthtml-include": "^1.7.4"
