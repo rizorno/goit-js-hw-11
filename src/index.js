@@ -1,3 +1,5 @@
+import './css/index.css';
+
 import fetchImages from './js/fetchImages';
 import { Notify } from 'notiflix';
 import SimpleLightbox from 'simplelightbox';
