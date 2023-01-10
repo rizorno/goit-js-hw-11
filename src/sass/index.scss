@@ -71,7 +71,10 @@ p {
   width: 100%;
 
   display: flex;
-  align-items: center;
+  flex-wrap: wrap;
+  row-gap: 10px;
+
+  align-items: flex-end;
   justify-content: center;
 
   padding: 20px 10px;
@@ -101,10 +104,6 @@ p {
   @media screen and (min-width: $tablet) {
     width: 400px;
   }
-
-  @media screen and (min-width: $desktop) {
-    width: 600px;
-  }
 }
 
 .search-form__button {
@@ -130,6 +129,44 @@ p {
     background-color: #0f3443;
     color: #ffffff;
   }
+}
+
+.pagination {
+  text-align: center;
+
+  @media screen and (min-width: 500px) {
+    margin-left: 10px;
+  }
+}
+
+.box-pagination {
+  margin-top: 5px;
+}
+
+.btn-load-more {
+  margin-right: 5px;
+}
+
+.btn-load-more,
+.btn-scroll {
+  width: 100px;
+  height: 30px;
+
+  background-color: #0f3443;
+  color: #ffffff;
+
+  font-size: 14px;
+
+  border: none;
+  border-radius: 5px;
+
+  cursor: pointer;
+}
+
+.js-bg {
+  background-color: #f0efef;
+  //   background-color: rgb(239, 239, 239);
+  color: rgb(0, 0, 0);
 }
 
 // Gallery
@@ -210,8 +247,7 @@ img {
 
   transition: background-color $transition, color $transition;
 
-  &:hover,
-  &:focus {
+  &:hover {
     background-color: #0f3443;
     color: #ffffff;
   }
