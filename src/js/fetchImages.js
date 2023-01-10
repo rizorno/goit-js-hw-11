@@ -1,9 +1,7 @@
 import axios from 'axios';
 
-// Function to search images by the name
-
 export default async function fetchImages(value, page) {
-  const url = 'https://pixabay.com/api/';
+  const BASE_URL = 'https://pixabay.com/api/';
 
   //* Parameters
   //? key - твій унікальний ключ доступу до API (отримується при реєстрації).
@@ -28,5 +26,7 @@ export default async function fetchImages(value, page) {
   // Alternative
   // const params = `key=${key}&q=${value}&image_type=photo&orientation=horizontal&safesearch=true&per_page=40&page=${page}`;
 
-  return await axios.get(`${url}?${params}`).then(response => response.data);
+  return await axios
+    .get(`${BASE_URL}?${params}`)
+    .then(response => response.data);
 }

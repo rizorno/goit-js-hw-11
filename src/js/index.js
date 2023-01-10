@@ -83,8 +83,7 @@ async function onSubmitSearchForm(e) {
   currentHits = response.hits.length;
 
   if (response.totalHits > 40) {
-    loadMoreBtn.classList.remove('is-hidden'); // for solution #1
-    //  document.addEventListener('scroll', onScrollDocument); // for solution #2
+    loadMoreBtn.classList.remove('is-hidden');
   } else {
     loadMoreBtn.classList.add('is-hidden');
   }
@@ -119,8 +118,6 @@ async function onSubmitSearchForm(e) {
   }
 }
 
-//* Solution #1 : Button 'Load more'
-
 // Add Event Listener on button 'Load more'
 loadMoreBtn.addEventListener('click', onClickLoadMoreBtn);
 
@@ -136,33 +133,3 @@ async function onClickLoadMoreBtn() {
     endCollectionText.classList.remove('is-hidden');
   }
 }
-
-//* Solution #2 : Infinite scroll
-
-// // Create Event for scroll
-// let isActiveQuery = false;
-// let onScrollDocument = e => {
-//   const { clientHeight, scrollHeight, scrollTop } = e.target.documentElement;
-//   const currentScrollTop = scrollHeight - scrollTop - clientHeight;
-//   if (currentScrollTop < 600 && !isActiveQuery) {
-//     isActiveQuery = true;
-//     loadNextPage();
-//   }
-// };
-
-// // Add Event Listener on scroll
-// document.addEventListener('scroll', onScrollDocument);
-
-// async function loadNextPage() {
-//   currentPage += 1;
-//   const response = await fetchImages(searchQuery, currentPage);
-//   renderCardImage(response.hits);
-//   isActiveQuery = false;
-//   lightbox.refresh();
-//   currentHits += response.hits.length;
-
-//   if (currentHits === response.totalHits) {
-//     document.removeEventListener('scroll', onScrollDocument);
-//     endCollectionText.classList.remove('is-hidden');
-//   }
-// }
