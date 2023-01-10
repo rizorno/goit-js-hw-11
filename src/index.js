@@ -222,7 +222,6 @@ async function loadNextPage() {
   currentHits += response.hits.length;
 
   if (currentHits === response.totalHits) {
-    document.removeEventListener('scroll', onScrollDocument);
     endCollectionText.classList.remove('is-hidden');
   }
 }
