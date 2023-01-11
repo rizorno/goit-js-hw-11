@@ -76,7 +76,6 @@ function cardTemplate({
 // Function of creating Card
 function renderCardImage(arr) {
   let markup = arr.map(element => cardTemplate(element)).join('');
-  console.log(markup);
   gallery.insertAdjacentHTML('beforeend', markup);
 }
 
@@ -221,7 +220,9 @@ async function loadNextPage() {
   lightbox.refresh();
   currentHits += response.hits.length;
 
-  if (currentHits === response.totalHits) {
+  if (currentHits === response.totalHits && currentHits > 40) {
     endCollectionText.classList.remove('is-hidden');
+  } else {
+    endCollectionText.classList.add('is-hidden');
   }
 }
