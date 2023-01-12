@@ -1,9 +1,12 @@
 import './sass/index.scss';
 
-import fetchImages from './js/fetchImages';
+import { ImagesAPI } from './js/fetchImages';
 import { Notify } from 'notiflix';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
+
+// Create a new example of Class
+const imagesApi = new ImagesAPI();
 
 const { searchForm, gallery, loadMoreBtn, endCollectionText } = {
   searchForm: document.querySelector('.search-form'),
@@ -102,7 +105,7 @@ async function onSubmitSearchForm(e) {
     return;
   }
 
-  const response = await fetchImages(searchQuery, currentPage);
+  const response = await imagesApi.fetchImages(searchQuery, currentPage);
   currentHits = response.hits.length;
 
   try {
@@ -190,7 +193,7 @@ loadMoreBtn.addEventListener('click', onClickLoadMoreBtn);
 
 async function onClickLoadMoreBtn() {
   currentPage += 1; // Alternative currentPage++
-  const response = await fetchImages(searchQuery, currentPage);
+  const response = await imagesApi.fetchImages(searchQuery, currentPage);
   renderCardImage(response.hits);
   lightbox.refresh();
   currentHits += response.hits.length;
@@ -219,7 +222,7 @@ let onScrollDocument = e => {
 
 async function loadNextPage() {
   currentPage += 1;
-  const response = await fetchImages(searchQuery, currentPage);
+  const response = await imagesApi.fetchImages(searchQuery, currentPage);
   renderCardImage(response.hits);
   isActiveQuery = false;
   lightbox.refresh();
