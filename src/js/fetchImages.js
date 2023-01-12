@@ -40,7 +40,6 @@ export class ImagesAPI {
       },
     };
     const response = await axios.get(`${BASE_URL}`, config);
-    console.log(config);
 
     return response.data;
   }

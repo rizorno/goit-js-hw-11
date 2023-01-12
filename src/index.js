@@ -157,7 +157,7 @@ async function onPaginBtn(e) {
 
   document.removeEventListener('scroll', onScrollDocument);
 
-  const response = await fetchImages(searchQuery, currentPage);
+  const response = await imagesApi.fetchImages(searchQuery, currentPage);
   if (
     searchQuery === '' ||
     (currentHits === response.totalHits && currentHits > 40)
@@ -169,6 +169,7 @@ async function onPaginBtn(e) {
     loadMoreBtn.classList.remove('is-hidden');
     return;
   }
+
   endCollectionText.classList.add('is-hidden');
 }
 
