@@ -5,9 +5,8 @@ import { Notify } from 'notiflix';
 import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
-const { searchForm, submitBtn, gallery, loadMoreBtn, endCollectionText } = {
+const { searchForm, gallery, loadMoreBtn, endCollectionText } = {
   searchForm: document.querySelector('.search-form'),
-  submitBtn: document.querySelector('.search-form__button'),
   gallery: document.querySelector('.gallery'),
   loadMoreBtn: document.querySelector('.load-more'),
   endCollectionText: document.querySelector('.end-collection-text'),

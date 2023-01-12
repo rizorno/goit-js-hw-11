@@ -13,9 +13,9 @@ export default async function fetchImages(value, page) {
   //? page (default = 1, min = 3, max=200) : результати пошуку будуть розбиті на сторінки (позначаємо як 'page');
   //? per_page (default = 20) : кількість результатів на сторінці (приймаємо: '40').
 
-  const key = '32692148-893493904108f813cf446c93e';
+  const BASE_KEY = '32692148-893493904108f813cf446c93e';
   const params = new URLSearchParams({
-    key,
+    key: BASE_KEY,
     q: value,
     image_type: 'photo',
     orientation: 'horizontal',
@@ -23,10 +23,9 @@ export default async function fetchImages(value, page) {
     per_page: 40,
     page,
   });
-  // Alternative
+  // Alternative and more difficult
   // const params = `key=${key}&q=${value}&image_type=photo&orientation=horizontal&safesearch=true&per_page=40&page=${page}`;
 
-  return await axios
-    .get(`${BASE_URL}?${params}`)
-    .then(response => response.data);
+  const response = await axios.get(`${BASE_URL}?${params}`);
+  return response.data;
 }
