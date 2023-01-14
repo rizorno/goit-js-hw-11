@@ -149,12 +149,13 @@ async function onSubmitSearchForm(e) {
 paginationBtn.addEventListener('click', onPaginBtn);
 
 async function onPaginBtn(e) {
+  // add or remove disabled for buttons
   paginationBtn.disabled = true;
   paginationScroll.disabled = false;
-
+  // add or remove class 'js-bg'
   paginationBtn.classList.toggle('js-bg');
   paginationScroll.classList.toggle('js-bg');
-
+  // remove Event Listener from Window
   document.removeEventListener('scroll', onScrollDocument);
 
   const response = await imagesApi.fetchImages(searchQuery, currentPage);
@@ -177,13 +178,14 @@ async function onPaginBtn(e) {
 paginationScroll.addEventListener('click', onPaginScroll);
 
 async function onPaginScroll(e) {
+  // add or remove disabled for buttons
   paginationBtn.disabled = false;
   paginationScroll.disabled = true;
-
+  // add or remove class 'js-bg'
   paginationBtn.classList.toggle('js-bg');
   paginationScroll.classList.toggle('js-bg');
   loadMoreBtn.classList.add('is-hidden');
-
+  // add Event Listener on Window
   document.addEventListener('scroll', onScrollDocument);
 }
 
